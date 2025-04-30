@@ -32,7 +32,7 @@ function signup() {
     .then((json) => {
       document.getElementById(
         "message"
-      ).textContent = `Signup successful for ${json.username}`;
+      ).textContent = `Signup successful for ${username}`;
       localStorage.setItem("username", username);
       window.location.href = "index.html";
     })
