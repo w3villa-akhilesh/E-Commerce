@@ -21,6 +21,17 @@ body {
     border-radius: 7px;
     background-color: rgba(254, 212, 48, 1);
     cursor: pointer;
+
+  }
+
+  #logout{
+    padding: 5px 20px;
+    font-size: 20px;
+    border: 1px solid #EE204D;
+    border-radius: 7px;
+    background-color: #EE204D;
+    cursor: pointer;
+    color: white;
   }
   
   header h1 {
@@ -91,5 +102,8 @@ body {
     .searching{
         display: flex;
         flex-direction: column;
+    }
+    #logout{
+      margin-top: 10px;
     }
   }

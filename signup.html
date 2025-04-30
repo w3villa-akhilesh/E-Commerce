@@ -26,9 +26,12 @@
             src="https://cdn-icons-png.freepik.com/256/18880/18880446.png?ga=GA1.1.1803097896.1745911548&semt=ais_hybrid"
             alt=""
           />
-          <input type="text" id="signupUsername" placeholder="Username" />
-          <input type="password" id="signupPassword" placeholder="Password" />
-          <button onclick="signup()">Signup</button>
+          <form onsubmit="signup(event)">
+          <input type="text" id="signupUsername" placeholder="Username" required/>
+          <input type="email" id="signupEmail" placeholder="Email" required/>
+          <input type="password" id="signupPassword" placeholder="Password" required/>
+          <button type="submit">Signup</button>
+          </form>
         </div>
       </div>
 

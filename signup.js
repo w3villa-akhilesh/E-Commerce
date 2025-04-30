@@ -1,11 +1,13 @@
-function signup() {
+function signup(event) {
+  event.preventDefault();
   const username = document.getElementById("signupUsername").value;
   const password = document.getElementById("signupPassword").value;
+  const email = document.getElementById("signupEmail").value;
 
   fetch("https://fakestoreapi.com/users", {
     method: "POST",
     body: JSON.stringify({
-      email: `${username}@fakestore.com`,
+      email,
       username,
       password,
       name: {

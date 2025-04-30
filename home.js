@@ -9,6 +9,7 @@ const API_URL = "https://fakestoreapi.com/products";
 const productList = document.getElementById("product-list");
 const searchInput = document.getElementById("search-input");
 const btn = document.getElementById("btn");
+const logoutbtn = document.getElementById("logout");
 let products = [];
 
 async function fetchProducts() {
@@ -48,6 +49,11 @@ btn.addEventListener("click", () => {
     product.title.toLowerCase().includes(searchTerm)
   );
   renderProducts(filtered);
+});
+
+logoutbtn.addEventListener("click", () => {
+  localStorage.removeItem('username');
+  window.location.href = 'signup.html';
 });
 
 fetchProducts();
