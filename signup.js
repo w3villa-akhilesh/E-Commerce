@@ -34,7 +34,7 @@ function signup() {
         "message"
       ).textContent = `Signup successful for ${json.username}`;
       localStorage.setItem("username", username);
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     })
     .catch((err) => {
       console.error(err);
