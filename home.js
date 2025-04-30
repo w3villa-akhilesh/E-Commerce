@@ -1,7 +1,7 @@
 window.onload = function () {
   const token = localStorage.getItem('username');
   if (!token) {
-    window.location.href = '/signup.html';
+    window.location.href = 'signup.html';
   }
 };
 
