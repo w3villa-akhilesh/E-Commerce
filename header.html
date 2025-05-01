@@ -20,17 +20,35 @@
     />
     <h1>JOURNAL</h1>
   </div>
-  <div class="cart">
-    <span id="count"></span>
-    <img
-      src="https://cdn-icons-png.freepik.com/256/15737/15737216.png?ga=GA1.1.43402990.1746014718&semt=ais_hybrid"
-      alt=""
-    />
-  </div>
-  <div class="searching">
-    <input type="text" id="search-input" placeholder="Search products..." />
-    &nbsp;
-    <button id="btn">Search</button>
+
+  <div style="display: flex; gap: 30px">
+    <div class="cart">
+      <span id="count"></span>
+      <img
+        src="https://cdn-icons-png.freepik.com/256/15737/15737216.png?ga=GA1.1.43402990.1746014718&semt=ais_hybrid"
+        alt=""
+      />
+    </div>
     <button id="logout">Logout</button>
   </div>
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const sidebar = document.getElementById("sidebar");
+
+    toggleBtn.onclick = function () {
+      sidebar.style.width = "250px";
+    };
+
+    closeBtn.onclick = function () {
+      sidebar.style.width = "0";
+    };
+
+    const logoutbtn = document.getElementById("logout");
+
+    logoutbtn.addEventListener("click", () => {
+      localStorage.removeItem("username");
+      window.location.href = "signup.html";
+    });
+  </script>
 </header>

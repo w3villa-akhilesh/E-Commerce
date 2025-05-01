@@ -2,7 +2,6 @@ const API_URL = "https://fakestoreapi.com/products";
 const productList = document.getElementById("product-list");
 const searchInput = document.getElementById("search-input");
 const btn = document.getElementById("btn");
-const logoutbtn = document.getElementById("logout");
 const greet = document.getElementById("greeting");
 const addCart = document.getElementById("addtocart");
 let products = [];
@@ -64,20 +63,3 @@ btn.addEventListener("click", () => {
   );
   renderProducts(filtered);
 });
-
-logoutbtn.addEventListener("click", () => {
-  localStorage.removeItem("username");
-  window.location.href = "signup.html";
-});
-
-const toggleBtn = document.getElementById("toggleBtn");
-const closeBtn = document.getElementById("closeBtn");
-const sidebar = document.getElementById("sidebar");
-
-toggleBtn.onclick = function () {
-  sidebar.style.width = "250px";
-};
-
-closeBtn.onclick = function () {
-  sidebar.style.width = "0";
-};

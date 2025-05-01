@@ -15,7 +15,7 @@ header {
 }
 
 #btn {
-  padding: 5px 20px;
+  padding: 10px 20px;
   font-size: 20px;
   border: 1px solid rgba(254, 212, 48, 1);
   border-radius: 7px;
@@ -221,6 +221,12 @@ header h1 {
 
 #mainContent {
   padding: 16px;
+}
+
+.searching{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 @media (max-width: 600px) {
