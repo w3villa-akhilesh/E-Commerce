@@ -1,16 +1,23 @@
-window.onload = function () {
-  const token = localStorage.getItem('username');
-  if (!token) {
-    window.location.href = 'signup.html';
-  }
-};
-
 const API_URL = "https://fakestoreapi.com/products";
 const productList = document.getElementById("product-list");
 const searchInput = document.getElementById("search-input");
 const btn = document.getElementById("btn");
 const logoutbtn = document.getElementById("logout");
+const greet = document.getElementById("greeting");
+const addCart = document.getElementById("addtocart");
 let products = [];
+let count = 0;
+
+window.onload = async function () {
+  const token = localStorage.getItem('username');
+  if (!token) {
+    window.location.href = 'signup.html';
+  }else{
+    greet.classList.add("greet");
+    greet.innerHTML = `<p>We're glad to have you here "${token}"<p>`;
+    await fetchProducts();
+};
+}
 
 async function fetchProducts() {
   try {
@@ -21,6 +28,12 @@ async function fetchProducts() {
     productList.innerHTML = "<p>Error loading products.</p>";
     console.error(error);
   }
+}
+
+function addtocart() {
+  const cnt = document.getElementById("count");
+  count++;
+  cnt.innerText = count;
 }
 
 function renderProducts(data) {
@@ -38,6 +51,7 @@ function renderProducts(data) {
       <h3>${product.title}</h3>
       <p>$${product.price}</p>
       <p>${product.description.substring(0, 100)}...</p>
+      <button id="addtocart" onclick="addtocart()">Add to Cart</button>
     `;
     productList.appendChild(card);
   });
@@ -55,5 +69,3 @@ logoutbtn.addEventListener("click", () => {
   localStorage.removeItem('username');
   window.location.href = 'signup.html';
 });
-
-fetchProducts();

@@ -24,6 +24,13 @@ body {
 
   }
 
+  .greet {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 300;
+    color: #1DB954;
+  }
+
   #logout{
     padding: 5px 20px;
     font-size: 20px;
@@ -43,6 +50,26 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+  }
+
+  .cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart > img{
+    height: 45px;
+    width: 50px;
+  }
+
+  .cart > span{
+    width: 20px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
   }
 
   #search-input {
@@ -91,17 +118,24 @@ body {
     color: #555;
   }
 
+  #addtocart{
+    padding: 10px 15px;
+    background-color: rgba(254, 212, 48, 1);
+    border: none;
+    border-radius: 8px;
+  }
+
   @media only screen and (max-width: 670px) {
     header{
-        flex-direction: column;
-        gap: 30px;
+      flex-direction: column;
+      gap: 30px;
     }
     .logo {
       flex-direction: column;
     }
     .searching{
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
     #logout{
       margin-top: 10px;
