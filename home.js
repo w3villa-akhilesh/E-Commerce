@@ -56,10 +56,20 @@ function renderProducts(data) {
   });
 }
 
-btn.addEventListener("click", () => {
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+function handleSearch(event) {
   const searchTerm = searchInput.value.toLowerCase();
   const filtered = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm)
   );
   renderProducts(filtered);
-});
+}
+
+searchInput.addEventListener('input', debounce(handleSearch, 500));
