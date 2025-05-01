@@ -9,15 +9,15 @@ let products = [];
 let count = 0;
 
 window.onload = async function () {
-  const token = localStorage.getItem('username');
+  const token = localStorage.getItem("username");
   if (!token) {
-    window.location.href = 'signup.html';
-  }else{
+    window.location.href = "signup.html";
+  } else {
     greet.classList.add("greet");
     greet.innerHTML = `<p>We're glad to have you here "${token}"<p>`;
     await fetchProducts();
+  }
 };
-}
 
 async function fetchProducts() {
   try {
@@ -66,6 +66,18 @@ btn.addEventListener("click", () => {
 });
 
 logoutbtn.addEventListener("click", () => {
-  localStorage.removeItem('username');
-  window.location.href = 'signup.html';
+  localStorage.removeItem("username");
+  window.location.href = "signup.html";
 });
+
+const toggleBtn = document.getElementById("toggleBtn");
+const closeBtn = document.getElementById("closeBtn");
+const sidebar = document.getElementById("sidebar");
+
+toggleBtn.onclick = function () {
+  sidebar.style.width = "250px";
+};
+
+closeBtn.onclick = function () {
+  sidebar.style.width = "0";
+};
