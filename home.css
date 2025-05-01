@@ -229,6 +229,53 @@ header h1 {
   gap: 10px;
 }
 
+.filter-container {
+  max-width: 300px;
+  padding: 20px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h4 {
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.price-inputs input {
+  padding: 10px 0;
+  padding-left: 10px;
+  border: none;
+  width: 80px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.btn-apply {
+  padding: 10px 15px;
+  background-color: rgba(254, 212, 48, 1);
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
+h4{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+input[type="checkbox"] {
+  accent-color: rgba(254, 212, 48, 1);
+}
+
 @media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
