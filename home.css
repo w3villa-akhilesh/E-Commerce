@@ -235,54 +235,6 @@ header h1 {
   margin-bottom: 50px;
 }
 
-.filter-container {
-  max-width: 300px;
-  padding: 20px;
-}
-
-.filter-group {
-  margin-bottom: 20px;
-}
-
-.filter-group h4 {
-  margin-bottom: 10px;
-}
-
-.filter-group label {
-  font-size: 20px;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.price-inputs input {
-  padding: 10px 0;
-  padding-left: 10px;
-  border: none;
-  width: 80px;
-  margin-right: 10px;
-  border-radius: 5px;
-  outline-color: rgba(13, 82, 214, 1);
-}
-
-.btn-apply {
-  padding: 10px 15px;
-  background-color: rgba(254, 212, 48, 1);
-  color: black;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  margin-bottom: 50px;
-}
-
-h4 {
-  font-size: 25px;
-  font-weight: 500;
-}
-
-input[type="checkbox"] {
-  accent-color: rgba(254, 212, 48, 1);
-}
-
 .outer {
   display: flex;
   align-items: center;
@@ -418,6 +370,64 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+h3{
+  margin-top: 80px;
+  font-size: xx-large;
+  font-weight: 400;
+  text-align: center;
+}
+
+.filters{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+.filter-1{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-1 > label{
+  font-size: x-large;
+}
+
+.filter-1 > input {
+  width: 80px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 0;
+  border: 2px solid rgba(254, 212, 48, 1);
+  border-radius: 5px;
+  outline: none;
+}
+
+#categorySelect{
+  padding: 10px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid rgba(254, 212, 48, 1);
+  border-radius: 5px;
+  outline: none;
+  background-color: white;
+}
+
+#applyFilters{
+  background-color: rgba(254, 212, 48, 1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: medium;
+  cursor: pointer;
+}
+
+#applyFilters:hover{
+  background-color: rgb(255, 196, 0);
+}
+
 body {
   background-color: #ffffff;
   color: #000000;
@@ -440,10 +450,24 @@ body.dark-mode {
     background-color: #0e0d0d;
     color: white;
   }
+  .filter-1 > input {
+    background-color: #0e0d0d;
+    color: white;
+  }
+  #categorySelect{
+    background-color: #0e0d0d;
+    color: white;
+  }
 }
 
 @media (max-width: 600px) {
   .footer-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 825px) {
+  .filters{
     flex-direction: column;
   }
 }

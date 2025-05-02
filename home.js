@@ -29,6 +29,7 @@ async function fetchProducts() {
     const response = await fetch(API_URL);
     products = await response.json();
     localStorage.setItem("products", products);
+    console.log(products);
     displayProducts(products, currentPage);
     setupPagination(products);
   } catch (error) {
@@ -84,7 +85,6 @@ function setupPagination(products) {
   }
 }
 
-
 function addtocart() {
   const cnt = document.getElementById("count");
   count++;
@@ -136,3 +136,20 @@ setInterval(() => {
   currentIndex = (currentIndex + 1) % slides.length;
   updateSlide(currentIndex);
 }, 3000);
+
+
+// Filter By Category and Price functionality 
+
+const applyFilters = document.getElementById("applyFilters");
+
+applyFilters.addEventListener("click", (e) => {
+  const min = parseFloat(document.getElementById("minPrice").value) || 0;
+  const max = parseFloat(document.getElementById("maxPrice").value) || Infinity;
+  const category = document.getElementById("categorySelect").value;
+
+  currentList = products.filter(p => p.price >= min && p.price <= max);
+  if (category) currentList = currentList.filter(p => p.category === category);
+
+  displayProducts(currentList, currentPage);
+  setupPagination(currentList);
+});
