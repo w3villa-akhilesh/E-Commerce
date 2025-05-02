@@ -13,16 +13,27 @@
       <a href="./about.html">About</a>
       <a href="./contact.html">Contact</a>
       <div class="filter-container">
-      
         <div class="filter-group">
           <h4>Filter by Category</h4>
-          <label><input type="checkbox" class="category" value="electronics"> Electronics</label>
-          <label><input type="checkbox" class="category" value="clothing"> Clothing</label>
-          <label><input type="checkbox" class="category" value="books"> Books</label>
-          <label><input type="checkbox" class="category" value="furniture"> Furniture</label>
+          <label
+            ><input type="checkbox" class="category" value="electronics" />
+            Electronics</label
+          >
+          <label
+            ><input type="checkbox" class="category" value="clothing" />
+            Clothing</label
+          >
+          <label
+            ><input type="checkbox" class="category" value="books" />
+            Books</label
+          >
+          <label
+            ><input type="checkbox" class="category" value="furniture" />
+            Furniture</label
+          >
         </div>
-         <br>
-        
+        <br />
+
         <div class="filter-group">
           <h4>Price Range</h4>
           <div class="price-inputs">
@@ -30,20 +41,28 @@
             <input type="number" id="maxPrice" min="100" placeholder="max" />
           </div>
         </div>
-    
-        <button class="btn-apply" onclick="applyFilters()">Apply Filters</button>
+
+        <button class="btn-apply" onclick="applyFilters()">
+          Apply Filters
+        </button>
       </div>
     </div>
-
-    <img
+    <div id="lg" style="display: flex; align-items: center; cursor: pointer;">
+      <img
       src="https://cdn-icons-png.freepik.com/256/18880/18880446.png?ga=GA1.1.1803097896.1745911548&semt=ais_hybrid"
       style="height: 50px; width: 50px"
       alt=""
     />
     <h1>JOURNAL</h1>
+    </div>
   </div>
 
   <div style="display: flex; gap: 30px">
+    <label class="switch">
+      <input id="theme-toggle" type="checkbox" />
+      <span class="slider round"></span>
+    </label>
+
     <div class="cart">
       <span id="count"></span>
       <img
@@ -58,6 +77,11 @@
     const closeBtn = document.getElementById("closeBtn");
     const sidebar = document.getElementById("sidebar");
     const logoutbtn = document.getElementById("logout");
+    const lg = document.getElementById("lg");
+
+    lg.addEventListener("click", () => {
+      window.location.href = "index.html";
+    })
 
     toggleBtn.onclick = function () {
       sidebar.style.width = "250px";
@@ -72,9 +96,11 @@
       window.location.href = "signup.html";
     });
 
-    function applyFilters(){
-       
-    }
-    
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDarkMode = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    });
+
   </script>
 </header>

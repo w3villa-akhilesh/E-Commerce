@@ -8,7 +8,6 @@
     margin: 0;
     font-family: "Outfit", sans-serif;
     font-style: normal;
-    background: #f4f4f4;
     background-image: url("https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg?ga=GA1.1.1780565752.1746075554&semt=ais_hybrid&w=740");
     background-size: cover;
   }
@@ -38,6 +37,10 @@
     display: block;
     margin-bottom: 5px;
     font-weight: 400;
+  }
+
+  .switch input{
+    width: 65px;
   }
 
   .form-group > input,

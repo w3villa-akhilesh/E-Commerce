@@ -8,6 +8,12 @@ let products = [];
 let count = 0;
 
 window.onload = async function () {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
   const token = localStorage.getItem("username");
   if (!token) {
     window.location.href = "signup.html";
