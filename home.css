@@ -224,7 +224,7 @@ header h1 {
   padding: 16px;
 }
 
-.searching{
+.searching {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -256,6 +256,7 @@ header h1 {
   width: 80px;
   margin-right: 10px;
   border-radius: 5px;
+  outline-color: rgba(13, 82, 214, 1);
 }
 
 .btn-apply {
@@ -268,7 +269,7 @@ header h1 {
   margin-bottom: 50px;
 }
 
-h4{
+h4 {
   font-size: 25px;
   font-weight: 500;
 }
@@ -277,7 +278,7 @@ input[type="checkbox"] {
   accent-color: rgba(254, 212, 48, 1);
 }
 
-.outer{
+.outer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,7 +291,7 @@ input[type="checkbox"] {
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-track {
@@ -319,7 +320,7 @@ input[type="checkbox"] {
 }
 
 .carousel-button {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   font-size: 18px;
@@ -328,7 +329,25 @@ input[type="checkbox"] {
 }
 
 .carousel-button:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.pagination-btn {
+  font-size: x-large;
+  margin: 0 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.pagination-btn.active {
+  background-color: rgba(254, 212, 48, 1);
+  color: black;
+  border: 1px solid black;
 }
 
 @media (max-width: 600px) {
