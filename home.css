@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  background-color: rgba(13, 82, 214, 1);
+  background-image: linear-gradient(rgb(87, 145, 252), rgba(13, 82, 214, 1));
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -126,7 +126,7 @@ header h1 {
 }
 
 .footer {
-  background-color: rgba(13, 82, 214, 1);
+  background-image: linear-gradient(rgb(87, 145, 252), rgba(13, 82, 214, 1));
   color: white;
   padding: 40px 20px 10px;
 }
@@ -196,7 +196,7 @@ header h1 {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(13, 82, 214, 1);
+  background-image: linear-gradient(to bottom right, rgba(13, 82, 214, 1), rgb(87, 145, 252));
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
