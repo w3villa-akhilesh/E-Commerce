@@ -40,13 +40,12 @@
     font-weight: 400;
   }
 
-  input,
+  .form-group > input,
   textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-
     font-size: 14px;
     outline-color: rgba(13, 82, 214, 1) ;
   }

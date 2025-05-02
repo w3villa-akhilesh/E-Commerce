@@ -143,6 +143,8 @@ header h1 {
 }
 
 .footer-section h3 {
+  font-size: x-large;
+  font-weight: 500;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -157,6 +159,8 @@ header h1 {
 }
 
 .footer-section ul li a {
+  font-size: larger;
+  font-weight: 400;
   color: white;
   text-decoration: none;
 }
