@@ -34,13 +34,17 @@ async function fetchProducts() {
 const itemsPerPage = 5;
 let currentPage = 1;
 
-function displayProducts(products, page) {
+function displayProducts(data, page) {
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = page * itemsPerPage;
-  const paginatedItems = products.slice(startIndex, endIndex);
+  const paginatedItems = data.slice(startIndex, endIndex);
 
   const productList = document.getElementById("product-list");
   productList.innerHTML = "";
+   if (data.length === 0) {
+     productList.innerHTML = "<p>No products found.</p>";
+     return;
+   }
 
   paginatedItems.forEach((product) => {
     const item = document.createElement("div");
@@ -81,8 +85,6 @@ function addtocart() {
   cnt.innerText = count;
 }
 
-function renderProducts(data) {}
-
 function debounce(func, delay) {
   let timer;
   return function (...args) {
@@ -91,12 +93,13 @@ function debounce(func, delay) {
   };
 }
 
-function handleSearch(event) {
+function handleSearch() {
   const searchTerm = searchInput.value.toLowerCase();
   const filtered = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm)
   );
-  renderProducts(filtered);
+  displayProducts(filtered, currentPage);
+  setupPagination(filtered);
 }
 
 searchInput.addEventListener("input", debounce(handleSearch, 500));
