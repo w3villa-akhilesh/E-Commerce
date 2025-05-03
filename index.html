@@ -52,8 +52,8 @@
       <button id="btn">Search</button>
     </div>
 
-    <h3>Filters</h3>
-    <div class="filters">
+    <h3 class="f-heading">Filters</h3>
+    <form id="filterForm" class="filters">
 
       <!-- Price Filter -->
       <div class="filter-1">
@@ -74,8 +74,11 @@
       </select>
       </div>
     
-      <button id="applyFilters">Apply Filters</button>
-    </div>
+      <div class="buttons">
+        <button id="applyFilters">Apply Filters</button>
+        <button type="button" onclick="resetFilters()">Reset Filters</button>  
+      </div>
+    </form>
 
     <div class="products" id="product-list"></div>
     <div id="pagination"></div>

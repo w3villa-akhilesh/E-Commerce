@@ -142,14 +142,25 @@ setInterval(() => {
 
 const applyFilters = document.getElementById("applyFilters");
 
+const filterfunc = () => {
+    
+    const min = parseFloat(document.getElementById("minPrice").value) || 0;
+    const max = parseFloat(document.getElementById("maxPrice").value) || Infinity;
+    const category = document.getElementById("categorySelect").value;
+  
+    currentList = products.filter(p => p.price >= min && p.price <= max);
+    if (category) currentList = currentList.filter(p => p.category === category);
+  
+    displayProducts(currentList, currentPage);
+    setupPagination(currentList);
+  }
+
 applyFilters.addEventListener("click", (e) => {
-  const min = parseFloat(document.getElementById("minPrice").value) || 0;
-  const max = parseFloat(document.getElementById("maxPrice").value) || Infinity;
-  const category = document.getElementById("categorySelect").value;
-
-  currentList = products.filter(p => p.price >= min && p.price <= max);
-  if (category) currentList = currentList.filter(p => p.category === category);
-
-  displayProducts(currentList, currentPage);
-  setupPagination(currentList);
+  e.preventDefault();
+  filterfunc();
 });
+
+function resetFilters() {
+  document.getElementById('filterForm').reset();
+  filterfunc();
+}
