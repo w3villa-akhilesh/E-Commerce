@@ -29,8 +29,6 @@ async function fetchProducts() {
   try {
     const response = await fetch(API_URL);
     products = await response.json();
-    localStorage.setItem("products", products);
-    console.log(products);
     displayProducts(products, currentPage);
     setupPagination(products);
   } catch (error) {
