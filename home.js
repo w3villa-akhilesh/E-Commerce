@@ -57,9 +57,10 @@ function displayProducts(data, page) {
     const item = document.createElement("div");
     item.classList.add("product");
     item.innerHTML = `<img src="${product.image}" alt="${product.title}" />
-      <h3>${product.title}</h3>
+    <h3>${product.title}</h3>
     <p>$${product.price}</p>
-   <p>${product.description.substring(0, 100)}...</p>
+    <p>${product.description.substring(0, 100)}...</p>
+    <a href="product.html?id=${product.id}" class="view-details">View Details</a> <br/> <br/>
     <button id="addtocart" onclick="addtocart()">Add to Cart</button>
   `;
     productList.appendChild(item);

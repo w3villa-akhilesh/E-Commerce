@@ -434,6 +434,10 @@ input:checked + .slider:before {
   margin-right: 7px;
 }
 
+.view-details{
+  color: rgba(13, 82, 214, 1);
+}
+
 #applyFilters:hover{
   background-color: rgb(255, 196, 0);
 }
@@ -468,6 +472,12 @@ body.dark-mode {
     background-color: #1b1818;
     color: white;
   }
+  .product-item{
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.822);
+  }
+  .view-details{
+    color: rgb(255, 196, 0);
+  }
 }
 
 @media (max-width: 600px) {
@@ -498,7 +508,11 @@ body.dark-mode {
     margin-top: 10px;
   }
   #search-input {
-    width: 100%;
+    margin: auto;
+    width:280px
+  }
+  #btn{
+    margin: auto;
   }
   .carousel-slide img {
     height: 500px;
