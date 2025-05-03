@@ -24,6 +24,7 @@ window.onload = async function () {
   }
 };
 
+// Fetching Products from Api
 async function fetchProducts() {
   try {
     const response = await fetch(API_URL);
@@ -38,6 +39,7 @@ async function fetchProducts() {
   }
 }
 
+// Pagination
 const itemsPerPage = 5;
 let currentPage = 1;
 
@@ -85,12 +87,14 @@ function setupPagination(products) {
   }
 }
 
+// Add to Cart Functionality
 function addtocart() {
   const cnt = document.getElementById("count");
   count++;
   cnt.innerText = count;
 }
 
+// Debouncing in Search Bar
 function debounce(func, delay) {
   let timer;
   return function (...args) {
@@ -99,6 +103,7 @@ function debounce(func, delay) {
   };
 }
 
+// Product Search Functionality
 function handleSearch() {
   const searchTerm = searchInput.value.toLowerCase();
   const filtered = products.filter((product) =>
@@ -110,6 +115,8 @@ function handleSearch() {
 
 searchInput.addEventListener("input", debounce(handleSearch, 500));
 
+
+// Carousel Functionality
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(track.children);
 const nextButton = document.querySelector(".next");
@@ -139,7 +146,6 @@ setInterval(() => {
 
 
 // Filter By Category and Price functionality 
-
 const applyFilters = document.getElementById("applyFilters");
 
 const filterfunc = () => {
@@ -155,12 +161,13 @@ const filterfunc = () => {
     setupPagination(currentList);
   }
 
-applyFilters.addEventListener("click", (e) => {
-  e.preventDefault();
-  filterfunc();
-});
+  applyFilters.addEventListener("click", (e) => {
+    e.preventDefault();
+    filterfunc();
+  });
 
-function resetFilters() {
-  document.getElementById('filterForm').reset();
-  filterfunc();
-}
+// Reset Functionality
+  function resetFilters() {
+    document.getElementById('filterForm').reset();
+    filterfunc();
+  }
