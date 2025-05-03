@@ -1,3 +1,4 @@
+// SignUp Function
 function signup(event) {
   event.preventDefault();
   const username = document.getElementById("signupUsername").value;
