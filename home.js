@@ -90,6 +90,7 @@ function setupPagination(products) {
 function addtocart() {
   const cnt = document.getElementById("count");
   count++;
+  alert("Product added successfully")
   cnt.innerText = count;
 }
 
